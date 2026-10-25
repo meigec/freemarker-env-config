@@ -1,0 +1,10 @@
+env:
+  name: prod
+  tier: production
+
+app:
+  replicas: 3
+  logLevel: WARN
+
+db:
+  poolSize: 50

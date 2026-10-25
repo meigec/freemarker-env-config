@@ -1,0 +1,7 @@
+client:
+  id: acme-bank
+  displayName: Acme Bank
+
+db:
+  host: acme-db.internal
+  schema: ACME

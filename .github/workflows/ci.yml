@@ -1,0 +1,30 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  render-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+
+      # Tests run first: a template change that breaks a rule fails the pipeline.
+      - name: Test templates
+        run: mvn -B verify
+
+      - name: Render every client and environment
+        run: mvn -B -q exec:java
+
+      - name: Publish rendered configuration
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-config
+          path: out/

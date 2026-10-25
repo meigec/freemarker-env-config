@@ -1,0 +1,6 @@
+env:
+  name: staging
+  tier: non-production
+
+app:
+  replicas: 2

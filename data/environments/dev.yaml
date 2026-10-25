@@ -1,0 +1,6 @@
+env:
+  name: dev
+  tier: non-production
+
+app:
+  logLevel: DEBUG

@@ -1,0 +1,5 @@
+# Client-specific exception for one environment only:
+# Globex keeps real-time risk disabled in production until its go-live.
+app:
+  featureFlags:
+    realtimeRisk: false

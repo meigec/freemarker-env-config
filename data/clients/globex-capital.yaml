@@ -1,0 +1,8 @@
+client:
+  id: globex-capital
+  displayName: Globex Capital
+
+db:
+  host: globex-db.internal
+  schema: GLOBEX
+  poolSize: 20
